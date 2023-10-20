@@ -1,0 +1,22 @@
+{
+  "name": "tennisdaw",
+  "version": "1.0.0",
+  "description": "Aplicacion para gestionar los partidos de tenis",
+  "main": "Player.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidenk0v/TennisDAW.git"
+  },
+  "author": "David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davidenk0v/TennisDAW/issues"
+  },
+  "homepage": "https://github.com/Davidenk0v/TennisDAW#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

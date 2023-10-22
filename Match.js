@@ -1,4 +1,6 @@
 class Match {
+    #matchDate;
+    #game;
 
     constructor() {
 

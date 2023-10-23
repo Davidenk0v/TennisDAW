@@ -83,7 +83,7 @@ test('Indicar un ganador: ganador es jugador, la fecha del partido ya pasó', ()
 })
 
 test('Indicar un ganador: ganador es jugador, el partido aún no se ha celebrado', () => {
-    const partido = new Match('10/10/2023');
+    const partido = new Match('2030/10/10');
     const jugador1 = new Player('Pepe', 0);
     const jugador2 = new Player('Juan', 0);
     partido.insertPlayer(jugador1);

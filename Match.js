@@ -30,6 +30,14 @@ class Match {
             return false;
         }
     }
+
+    get winner() {
+        if (this.winner == null) {
+            return null;
+        } else {
+            return this.winner;
+        }
+    }
 }
 
 

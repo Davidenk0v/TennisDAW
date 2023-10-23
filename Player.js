@@ -1,11 +1,11 @@
 class Player {
     name;
-    sex;
+    #sex;
     birthDate;
-    #age;
+    age;
     ranking;
 
-    constructor(name, ranking) {
+    constructor(name, ranking, birthDate, sex = 'Female') {
         this.name = name;
         this.birthDate = birthDate;
         this.sex = this.validateSex(sex);
@@ -36,11 +36,11 @@ class Player {
         return age;
     }
 
-    get Age() {
+    get age() {
         return this.age;
     }
 
-    getCategory() {
+    get category() {
         if (this.age < 12) {
             return 'Benjamin';
         } else if (this.age > 12 && this.age < 16) {
@@ -57,7 +57,7 @@ class Player {
 let player1 = new Player('David', 'hamburguesa', '01-05-1990')
 
 console.log(player1)
-console.log(player1.getCategory())
+
 
 
 module.exports = Player;

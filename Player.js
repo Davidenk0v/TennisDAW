@@ -36,7 +36,7 @@ class Player {
         return age;
     }
 
-    getAge() {
+    get Age() {
         return this.age;
     }
 

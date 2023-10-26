@@ -5,9 +5,16 @@ class Player {
     age;
     ranking;
 
-    constructor(name, ranking, birthDate, sex = 'Female') {
+    constructor(name, ranking = 0, sex = 'Female', birthDate = undefined) {
         this.name = name;
-        this.birthDate = birthDate;
+        this.ranking = ranking;
+        if (birthDate) {
+            let [d, m, y] = birthDate.split('/');
+            if (!isNaN(new Date(y, m - 1, d))) {
+                this.birthDate = birthDate;
+            }
+        }
+        //this.birthDate = birthDate;
         this.sex = this.validateSex(sex);
         this.age = this.ageCalculator()
     }
@@ -21,10 +28,11 @@ class Player {
     }
 
     get Sex() {
-        return this.sex;
+        return this.#sex;
     }
 
     ageCalculator() {
+        if (!this.birthDate) return undefined;
         let now = new Date();
         let birth = new Date(this.birthDate);
         let age = now.getFullYear() - birth.getFullYear();
@@ -41,20 +49,15 @@ class Player {
     }
 
     get category() {
-        if (this.age < 12) {
-            return 'Benjamin';
-        } else if (this.age > 12 && this.age < 16) {
-            return 'Cadet'
-        } else if (this.age > 15 && this.age < 20) {
-            return 'Junior'
-        } else {
-            return 'Senior'
-        }
+        if (this.age <= 12) return 'Benjamin';
+        if (this.age <= 15) return 'Cadet';
+        if (this.age <= 19) return 'Junior';
+        return 'Senior';
     }
 }
 
 
-let player1 = new Player('David', 'hamburguesa', '01-05-1990')
+let player1 = new Player('David', 1, 'Male', '01/05/1990')
 
 console.log(player1)
 

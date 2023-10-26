@@ -16,7 +16,7 @@ test('Crear un partido sin fecha', () => {
 });
 
 test('Crear un partido con fecha como objeto', () => {
-    const fecha = new Date(`2023/10/24`);
+    const fecha = new Date('2023/10/24');
     const partido1 = new Match();
     expect(partido1).toEqual({
         players: [],
